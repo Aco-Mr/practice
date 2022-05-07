@@ -10,9 +10,9 @@
     </parent>
 
     <groupId>com.aco.practice</groupId>
-    <artifactId>comsumer2</artifactId>
+    <artifactId>consumer2</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>comsumer2</name>
+    <name>consumer2</name>
 
     <properties>
         <java.version>1.8</java.version>
