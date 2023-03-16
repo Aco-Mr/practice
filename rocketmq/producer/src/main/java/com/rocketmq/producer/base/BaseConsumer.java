@@ -1,5 +1,6 @@
 package com.rocketmq.producer.base;
 
+import com.rocketmq.producer.RocketMqConstant;
 import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
 import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyContext;
 import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyStatus;
@@ -18,10 +19,10 @@ public class BaseConsumer {
         //1.创建消费者对象
         DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("my-consumer-group1");
         //2.指明namesrv地址
-        consumer.setNamesrvAddr("10.33.39.24:9876");
+        consumer.setNamesrvAddr(RocketMqConstant.NAME_SERVICE_ADDRESS);
         //3.订阅主题：topic 和过滤消息用的tag表达式
         consumer.subscribe("Mytopic1","*");
-        //4.创建一个监听器，当broker把消息推送过来的时候调用
+        //4.创建一个监听器，当broker把消息推送过来的时候调用(并发监听器)
         consumer.registerMessageListener(new MessageListenerConcurrently() {
             @Override
             public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> list, ConsumeConcurrentlyContext consumeConcurrentlyContext) {

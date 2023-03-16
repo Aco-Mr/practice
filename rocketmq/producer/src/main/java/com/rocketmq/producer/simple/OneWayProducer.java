@@ -1,5 +1,6 @@
 package com.rocketmq.producer.simple;
 
+import com.rocketmq.producer.RocketMqConstant;
 import org.apache.rocketmq.client.producer.DefaultMQProducer;
 import org.apache.rocketmq.common.message.Message;
 import org.apache.rocketmq.remoting.common.RemotingHelper;
@@ -14,7 +15,7 @@ public class OneWayProducer {
         //创建生产者
         DefaultMQProducer producer = new DefaultMQProducer("OneWayProducerGroup1");
         //指定namesrv地址
-        producer.setNamesrvAddr("10.33.39.24:9876");
+        producer.setNamesrvAddr(RocketMqConstant.NAME_SERVICE_ADDRESS);
         //启动生产者
         producer.start();
         //发送消息

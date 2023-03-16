@@ -1,5 +1,6 @@
 package com.rocketmq.producer.base;
 
+import com.rocketmq.producer.RocketMqConstant;
 import org.apache.rocketmq.client.exception.MQClientException;
 import org.apache.rocketmq.client.producer.DefaultMQProducer;
 import org.apache.rocketmq.client.producer.SendResult;
@@ -16,7 +17,7 @@ public class BaseProducer {
         //1.创建生产者
         DefaultMQProducer producer = new DefaultMQProducer("my-producer-group1");
         //2.指定namesrv地址
-        producer.setNamesrvAddr("10.33.39.24:9876");
+        producer.setNamesrvAddr(RocketMqConstant.NAME_SERVICE_ADDRESS);
         //3.启动生产者
         producer.start();
         //4.创建消息

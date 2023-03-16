@@ -1,5 +1,6 @@
 package com.rocketmq.producer.simple;
 
+import com.rocketmq.producer.RocketMqConstant;
 import org.apache.rocketmq.client.producer.DefaultMQProducer;
 import org.apache.rocketmq.client.producer.SendCallback;
 import org.apache.rocketmq.client.producer.SendResult;
@@ -19,7 +20,7 @@ public class AsyncProducer {
         //创建生产者
         DefaultMQProducer producer = new DefaultMQProducer("AsyncProducerGroup1");
         //指定namesrv地址
-        producer.setNamesrvAddr("10.33.39.24:9876");
+        producer.setNamesrvAddr(RocketMqConstant.NAME_SERVICE_ADDRESS);
         //启动生产者
         producer.start();
         //设置异步发送消息失败重试时间
