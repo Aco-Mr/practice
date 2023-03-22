@@ -1,2 +1,6 @@
 server:
   port: 8088
+rocketmq:
+  producer:
+    group: my-boot-producer-group #producer组名
+  name-server: 10.33.39.115:9876 #namesrv地址
