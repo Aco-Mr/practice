@@ -18,4 +18,9 @@ public class ProducerApplicationTest {
     void test(){
         myProducer.sendMessage("my-boot-topic1","Hello My RocketMq Consumer");
     }
+
+    @Test
+    void test2(){
+        myProducer.sendMessageInTransaction("my-boot-topic1","Hello My RocketMq Consumer");
+    }
 }
