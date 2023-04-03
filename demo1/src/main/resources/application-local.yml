@@ -8,13 +8,13 @@ spring:
           driver-class-name: com.mysql.cj.jdbc.Driver
           url: jdbc:mysql://192.168.8.107:3306/t_demo?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&userSSL=false
           username: root
-          password: 123456
+          password: ENC(7i/Lkb9SnPzWnx+0NzTvNw==)
         slave:
           type: com.zaxxer.hikari.HikariDataSource
           driver-class-name: com.mysql.cj.jdbc.Driver
           url: jdbc:mysql://192.168.8.107:3306/t_test2?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&userSSL=false
           username: root
-          password: 123456
+          password: ENC(7i/Lkb9SnPzWnx+0NzTvNw==)
 #    type: com.zaxxer.hikari.HikariDataSource
 #    driver-class-name: com.mysql.cj.jdbc.Driver
 #    url: jdbc:mysql://192.168.8.107:3306/t_test?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&userSSL=false
@@ -60,7 +60,15 @@ mybatis-plus:
 
 logging:
   config: classpath:log4j2.xml
-
+# 加密配置
+jasypt:
+  encryptor:
+    # 指定加密密钥，生产环境请放到启动参数里面
+    password: acoBasicAlgorithm
+    # 指定解密算法，需要和加密时使用的算法一致
+    algorithm: PBEWithMD5AndDES
+    # 指定initialization vector类型
+    iv-generator-classname: org.jasypt.iv.NoIvGenerator
 
 hikari:
   master:
