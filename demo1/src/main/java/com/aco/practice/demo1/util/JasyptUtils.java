@@ -5,6 +5,7 @@ import org.jasypt.properties.PropertyValueEncryptionUtils;
 import org.jasypt.util.text.BasicTextEncryptor;
 
 /**
+ * Jasypt算法加密工具
  * @author A.co
  * @date 2023/4/3 21:48
  */
