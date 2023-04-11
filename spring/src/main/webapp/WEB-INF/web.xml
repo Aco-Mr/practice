@@ -4,4 +4,22 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <!--  指定servlet容器-->
+  <servlet>
+    <!-- servlet名称-->
+    <servlet-name>acoServlet</servlet-name>
+    <!-- servlet所在的全路径-->
+    <servlet-class>com.aco.spring.v1.AcoServlet</servlet-class>
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>application.properties</param-value>
+    </init-param>
+    <!-- tomcat启动时加载此servlet -->
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>acoServlet</servlet-name>
+    <url-pattern>/*</url-pattern>
+  </servlet-mapping>
 </web-app>
