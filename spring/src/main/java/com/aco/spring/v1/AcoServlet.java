@@ -110,14 +110,19 @@ public class AcoServlet extends HttpServlet {
 
     @Override
     public void init(ServletConfig config) throws ServletException {
+        //===========IOC==========
         //1.加载配置文件
         doLoadConfig(config.getInitParameter("contextConfigLocation"));
         //2.扫描相关的类
         doScanner(contextConfig.getProperty("scanPackage"));
         //3.实例化相关的类，并且将实例对象缓存到IOC容器中
         doInstance();
+
+        //===========DI============
         //4.完成自动赋值(依赖注入)
         doAutowired();
+
+        //===========MVC============
         //5.初始化HandlerMapping
         doInitHandlerMapping();
         System.out.println("A Spring Framework is init...");
@@ -162,9 +167,10 @@ public class AcoServlet extends HttpServlet {
                 }
 
                 try {
-                    //打开强制填充
+                    //打开强制访问
                     field.setAccessible(true);
                     //根据beanName从ioc容器中找到对应的实例
+                    //找到了@AcoAutowired这个注解的字段进行自动赋值
                     field.set(entry.getValue(),ioc.get(beanName));
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();

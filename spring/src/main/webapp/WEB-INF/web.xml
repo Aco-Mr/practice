@@ -9,10 +9,10 @@
     <!-- servlet名称-->
     <servlet-name>acoServlet</servlet-name>
     <!-- servlet所在的全路径-->
-    <servlet-class>com.aco.spring.v1.AcoServlet</servlet-class>
+    <servlet-class>com.aco.spring.v2.servlet.AcoServlet</servlet-class>
     <init-param>
       <param-name>contextConfigLocation</param-name>
-      <param-value>application.properties</param-value>
+      <param-value>classpath:application.properties</param-value>
     </init-param>
     <!-- tomcat启动时加载此servlet -->
     <load-on-startup>1</load-on-startup>
