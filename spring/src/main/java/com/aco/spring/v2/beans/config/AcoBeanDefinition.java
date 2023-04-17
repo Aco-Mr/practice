@@ -1,7 +1,7 @@
 package com.aco.spring.v2.beans.config;
 
 /**
- * Bean信息存放实体
+ * Bean定义，封装Bean的配置信息
  * @author A.co
  * @version 1.0
  * @date 2023/4/16 11:01

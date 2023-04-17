@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Properties;
 
 /**
- * 读取Bean信息
+ * 用来读取配置文件的工具类
  * @author A.co
  * @version 1.0
  * @date 2023/4/14 11:05

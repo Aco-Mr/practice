@@ -1,7 +1,7 @@
 package com.aco.spring.v2.beans;
 
 /**
- * Bean装饰类
+ * 对原生对象和代理对象的统一封装
  * @author A.co
  * @version 1.0
  * @date 2023/4/16 11:04
