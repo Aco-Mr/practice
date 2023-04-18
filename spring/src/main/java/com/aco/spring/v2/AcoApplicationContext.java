@@ -20,14 +20,29 @@ import java.util.Map;
  */
 public class AcoApplicationContext {
 
+    /**
+     * 配置文件路径
+     */
     private String[] configLocations;
 
+    /**
+     * 用来读取配置文件的工具类
+     */
     private AcoBeanDefinitionReader reader;
 
+    /**
+     * 缓存bean信息
+     */
     private Map<String,AcoBeanDefinition> beanDefinitionMap = new HashMap<>();
 
+    /**
+     * 缓存bean信息封装
+     */
     private Map<String,AcoBeanWrapper> factoryBeanInstanceCache = new HashMap<>();
 
+    /**
+     * 三级缓存
+     */
     private Map<String,Object> factoryBeanObjectCache = new HashMap<>();
 
     public AcoApplicationContext(String... configLocations) {
