@@ -118,4 +118,8 @@ public class AcoBeanDefinitionReader {
             }
         }
     }
+
+    public Properties getConfig() {
+        return this.contextConfig;
+    }
 }
