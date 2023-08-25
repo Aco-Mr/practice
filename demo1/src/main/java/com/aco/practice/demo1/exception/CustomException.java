@@ -12,26 +12,31 @@ import io.swagger.annotations.ApiModelProperty;
 public class CustomException extends RuntimeException {
 
     @ApiModelProperty(value = "异常状态码")
-    private Integer code;
+    private ApiHttpCode code;
 
     @ApiModelProperty(value = "异常信息")
     private String msg;
 
-    public CustomException(Integer code,String msg){
+    public CustomException(ApiHttpCode code){
+        super(code.getMsg());
+        this.code = code;
+    }
+
+    public CustomException(ApiHttpCode code, String msg){
         super(msg);
         this.code = code;
     }
 
     public CustomException(String msg){
         super(msg);
-        this.code = ApiHttpCode.ERROR.getCode();
+        this.code = ApiHttpCode.ERROR;
     }
 
-    public Integer getCode() {
+    public ApiHttpCode getCode() {
         return code;
     }
 
-    public void setCode(Integer code) {
+    public void setCode(ApiHttpCode code) {
         this.code = code;
     }
 }
